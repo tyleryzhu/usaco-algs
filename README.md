@@ -4,6 +4,8 @@ A compilation of some common algorithms/data structures and implementations used
 # Data Structures: 
   Binary Indexed Tree (BIT.cpp): implemented a structure, solves the Range Sum Query (RSQ) problem in O(log N) time. 
   
+  Disjoint-Set Union (disj_set.cpp): implemented with an array, solves the DSU problem in O(log N) (amortized) time for finding components and O(log N) time for union of components. Needs to be updated with an implementation into a structure. 
+  
   Segment Tree (segtree.cpp): implemented in a structure, solves the Range Minimum Query (RMQ) problem in O(log N) time. 
   
 # Algorithms: 
