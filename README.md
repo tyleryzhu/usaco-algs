@@ -16,4 +16,14 @@ A compilation of some common algorithms/data structures and implementations used
     O(E+V^2) implementation with an Adjacency List (dijkstra_nopq_adjlist.cpp): not really useful 
     
     O((E+V)log V) implemenation with a Priority Queue and Adjacency List (dijkstra_pq2.cpp): fastest usually, best for sparser graphs (E ~ V)
+    
+  Floyd-Warshall Algorithm (floyd.cpp): implemented with adjacency matrix, solves the All-Pairs Shortest Path (APSP) problem in O(V^3) time.
+  
+  Kruskal's Algorithm (kruskal.cpp): implemented with Union-Find Data Structure and an edge array, solves the Minimum Spanning Tree problem by greedily adding edges in O(Elog E) time. 
+  
+  Prim's Algorithm: implemented with either an adjacency matrix or priority queue, solves the Minimum Spanning Tree Problem by greedily adding vertices 
+  
+    O(V^2) implemenation with an Adjacency Matrix (prim.cpp): useful for dense graphs (E ~ V^2), i.e. superbull 
+    
+    O(Elog E) implementation with an Adjacency list (prim_pq.cpp): useful for basically everything else. 
   
