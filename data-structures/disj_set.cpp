@@ -1,5 +1,5 @@
 #include <iostream>
-#include <queue>
+#include <cstring>
 
 using namespace std; 
 
@@ -8,24 +8,6 @@ int adj[2500][2500];  // adjacency list
 int parent[2500] = {0};   // parent array to store parents
 int size[2500] = {0};  		// store the sizes of the components based on root node
 int counter;
-queue<int> q;
-
-void bfs(int v){ 			// floodfill components and fill out parents array while doing so . 
-    parent[v] = v;
-    q.push(v);
-    int start = v; 
-    while (!q.empty()){
-    	size[start]++; 			// keep the size of the component 
-        v = q.front();
-        q.pop();
-        for (int i = 1; i <= N; i++){
-            if (adj[v][i] && (parent[i] == -1)){
-                parent[i] = v;
-                q.push(i);
-            }
-        }
-    }
-}
 
 int find(int v) { //finds the root node of the component that v is in// should return v if v is the root
 	if (v == parent[v]) return v; //base case
@@ -49,20 +31,8 @@ void Union(int u, int v){				// unions u-component and v-component together
 
 
 int main() {
-    counter = 0;
     cin >> N >> M;
-    for (int i = 1; i<=N; i++){  // initialize all parents as -1 
-    	parent[i] = -1; 
-    }
-
-    for (int i = 0; i<M; i++){ // write the adjacency matrix
-        int x, y, w; // two nodes + weight 
-        cin >> x >> y >> w;
-        adj[x][y] = w;
-        adj[y][x] = w;
-    }
-    
-    sort(edges, edges+M, comp); //sort edges
-
+    memset(parent, -1, sizeof(parent)); 
+	
     return 0;
 }
