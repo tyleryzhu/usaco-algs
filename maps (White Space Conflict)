@@ -1,0 +1,34 @@
+some notes about how to use maps in C++
+
+//declare 
+#include <map> 
+
+//nice shortcuts 
+#typedef map<string, int>  msi; 
+
+#define TRmsi(c, it) \
+	for (msi::iterator it = (c).begin(); it != (c).end(); it++)
+
+//declare a map of string, int 
+msi tree; 
+
+// to either retrieve the value of a key as an integer or overwrite/intialize a key use : at[]
+tree["Oak"] = 10; 
+tree["Oak"]++; 						//tree["Oak"] now equals 11; 
+int counter = tree["Oak"]; 
+counter = tree["NotATree"]; 		//will throw an exception if "NotATree" is not a Key!!
+
+// to check if a value is in the map 
+if (tree.insert(make_pair("gross", 1)).second == false) // false means key is already in the map
+
+// iterating through maps 
+// we can use TRmsi which awe already defined
+// however to access the values of a map uhHH awk 
+TRmsi(tree, it){ 			//it is iterator
+	string nice = it->first; 
+	int cool = it->second; 
+}
+
+//finally nice to erase maps in case u need them again (wtf?) 
+tree.erase(tree.begin(), tree.end()); 
+
