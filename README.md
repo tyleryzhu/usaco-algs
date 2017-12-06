@@ -25,7 +25,11 @@ A compilation of some common algorithms/data structures and implementations used
   
   Prim's Algorithm: implemented with either an adjacency matrix or priority queue, solves the Minimum Spanning Tree Problem by greedily adding vertices 
   
-    O(V^2) implemenation with an Adjacency Matrix (prim.cpp): useful for dense graphs (E ~ V^2), i.e. superbull 
+    O(V^2) implemenation with an Adjacency Matrix (prim.cpp): useful for dense graphs (E ~ V^2), see FEB15 superbull 
     
     O(Elog E) implementation with an Adjacency list (prim_pq.cpp): useful for basically everything else. 
+  
+  Rabin-Karp Algorithm: implemented with a typical polynomial rolling hash, solves the substring search problem efficiently with said rolling hash. 
+    
+    O(n+m) implementation where n is the text length and m is the pattern length 
   
