@@ -43,7 +43,7 @@ void Union(int u, int v){				// unions u-component and v-component together
 	if (uRoot == vRoot) return; 
 	if (size[uRoot] < size[vRoot]){   	// if the u-component is smaller than the v-component (heurestic)
 		parent[uRoot] = parent[vRoot];  // adding all vertices of u-component to the v component, so u-component vertices access v-component node
-		size[vRoot] = size[uRoot]; 		// hence it is an optimization to add the smaller comp. to larger one so that less vertices need to access one extra
+		size[vRoot] += size[uRoot]; 		// hence it is an optimization to add the smaller comp. to larger one so that less vertices need to access one extra
 	}
 	else {								// if v-component is smaller than u-component
 		parent[vRoot] = parent[uRoot]; 
